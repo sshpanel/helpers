@@ -9,8 +9,6 @@
 apt-get update -y
 clear
 
-display_sshpanel_screen
-echo "--------"
 info "Welcome to SSHPanel & VPNPanel configuration scripts."
 enter
 echo ""

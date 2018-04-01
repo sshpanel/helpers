@@ -9,9 +9,6 @@
 apt update -y
 clear
 
-display_sshpanel_screen
-echo ""
-echo "--------"
 info "Welcome to SSHPanel & VPNPanel configuration scripts."
 enter
 echo ""
@@ -138,5 +135,3 @@ echo ""
 echo "-------"
 success "Done! Server has been configured!"
 echo "Test the installation at http://`curl -s icanhazip.com`:4210"
-
-#debian jessie webserver di html
