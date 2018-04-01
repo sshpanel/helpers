@@ -95,7 +95,7 @@ __CODENAME__=`grep "VERSION=" /etc/os-release |awk -F= {' print $2'}|sed s/\"//g
 if [ ${__PHP__} -eq 1 ]; then
     danger "Installing [PHP]..."
     if [ ${__CODENAME__} = 'stretch' ]; then 
-        sudo sudo apt-get install php7.0 libapache2-mod-php7.0 -y
+        sudo sudo apt-get install php7.0 php7.0-xml php7.0-zip libapache2-mod-php7.0 -y
     else
         sudo sudo apt-get install php5 libapache2-mod-php5 -y
     fi

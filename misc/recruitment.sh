@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. $HOME/services/support/string-helper.sh
+. $HOME/helpers/support/string-helper.sh
 
 echo "\n\n\n";
 info "SSHPanel & VPNPanel is looking for People who used to work with BASH environtment."
