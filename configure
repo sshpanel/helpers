@@ -1,0 +1,34 @@
+#!/bin/bash
+# SSHPANEL HELPERS CONFIGURATION SCRIPTS
+# Author: Rizal Fakhri <rizal@codehub.id>
+
+. $HOME/helpers/support/app-check.sh
+. $HOME/helpers/support/os-detector.sh
+. $HOME/helpers/support/string-helper.sh
+. $HOME/helpers/support/welcome-screen.sh
+
+__LSB__=`lsb_release -i -s`
+__DIST__=$(echo ${__LSB__})
+
+clear
+display_sshpanel_screen
+
+app_check_bool yum
+if [ ! $? -eq 1 ]; then 
+    echo "";
+    danger "Unfortunately but CentOS doesn't supported yet!"
+    exit 1
+fi 
+
+echo ""
+echo "---------"
+info "This script will make changes on your server to make it work with SSHPanel/VPNPanel."
+enter
+echo "";
+
+info "OS Detected : [${__LSB__} | $(os_detect)].";
+text_info "Preparing..."
+sleep 5
+clear 
+bash $HOME/helpers/monitor/${__LSB__,,}-server.sh
+bash $HOME/helpers/misc/recruitment.sh

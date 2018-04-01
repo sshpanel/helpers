@@ -1,0 +1,76 @@
+echo ""
+echo "---------"
+info "You'll be asked few question to configure your server to make it work with SSHPanel/VPNPanel."
+enter
+echo "";
+echo "---------"
+echo ""
+
+echo "[1]. Do you want to install OpenVPN Services?"
+text_info "  [1] => YES"
+text_danger "  [2] => NO"
+read -p "Answer (Number Only!) : " __OPENVPN_SERVICE__
+case "${__OPENVPN_SERVICE__}" in 
+  1 ) echo -e "--------"; echo "Install OpenVPN : `success "YES!"`"; echo -e "--------\n";;
+  2 ) echo -e "--------"; echo "Install OpenVPN : `danger "NO!"`"; echo -e "--------\n";;
+  * ) danger "Please enter valid number!"; danger "Exiting!";exit;;
+esac
+
+echo "[2]. Do you want to install Dropbear Services?"
+text_info "  [1] => YES"
+text_danger "  [2] => NO"
+read -p "Answer (Number Only!) : " __DROPBEAR_SERVICE__
+case "${__DROPBEAR_SERVICE__}" in 
+  1 ) echo -e "--------"; echo "Install Dropbear : `success "YES!"`"; echo -e "--------\n";;
+  2 ) echo -e "--------"; echo "Install Dropbear : `danger "NO!"`"; echo -e "--------\n";;
+  * ) danger "Please enter valid number!"; danger "Exiting!";exit;;
+esac
+
+echo "[3]. Do you want to install Squid 3 Services?"
+text_info "  [1] => YES"
+text_danger "  [2] => NO"
+read -p "Answer (Number Only!) : " __SQUID3_SERVICE__
+case "${__SQUID3_SERVICE__}" in 
+  1 ) echo -e "--------"; echo "Install Squid 3 : `success "YES!"`"; echo -e "--------\n";;
+  2 ) echo -e "--------"; echo "Install Squid 3 : `danger "NO!"`"; echo -e "--------\n";;
+  * ) danger "Please enter valid number!"; danger "Exiting!";exit;;
+esac
+
+echo "[4]. Do you want to install BadVPN Services?"
+text_info "  [1] => YES"
+text_danger "  [2] => NO"
+read -p "Answer (Number Only!) : " __BADVPN_SERVICE__
+case "${__BADVPN_SERVICE__}" in 
+  1 ) echo -e "--------"; echo "Install BadVPN : `success "YES!"`"; echo -e "--------\n";;
+  2 ) echo -e "--------"; echo "Install BadVPN : `danger "NO!"`"; echo -e "--------\n";;
+  * ) danger "Please enter valid number!"; danger "Exiting!";exit;;
+esac
+
+echo "[5]. Do you want to install Webmin Services?"
+text_info "  [1] => YES"
+text_danger "  [2] => NO"
+read -p "Answer (Number Only!) : " __WEBMIN_SERVICE__
+case "${__WEBMIN_SERVICE__}" in 
+  1 ) echo -e "--------"; echo "Install Webmin : `success "YES!"`"; echo -e "--------\n";;
+  2 ) echo -e "--------"; echo "Install Webmin : `danger "NO!"`"; echo -e "--------\n";;
+  * ) danger "Please enter valid number!"; danger "Exiting!";exit;;
+esac
+
+echo "Preparing.......";
+sleep 5
+
+clear
+if [ ${__OPENVPN_SERVICE__} -eq 1 ]; then 
+    info "Installing OpenVPN..."
+    bash $HOME/helpers/services/${__DIST__}/openvpn.sh
+fi
+
+if [ ${__DROPBEAR_SERVICE__} -eq 1 ]; then 
+    info "Installing Dropbear..."
+    bash $HOME/helpers/services/${__DIST__}/dropbear.sh
+fi
+
+if [ ${__SQUID3_SERVICE__} -eq 1 ]; then 
+    info "Installing Squid 3..."
+    bash $HOME/helpers/services/${__DIST__}/squid3.sh
+fi
