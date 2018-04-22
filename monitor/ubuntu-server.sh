@@ -123,6 +123,13 @@ unzip master.zip
 mv phpsysinfo-master/* ./
 mv phpsysinfo.ini.new phpsysinfo.ini 
 
+cd /var/www
+rm -rf *
+wget https://github.com/phpsysinfo/phpsysinfo/archive/master.zip
+unzip master.zip 
+mv phpsysinfo-master/* ./
+mv phpsysinfo.ini.new phpsysinfo.ini 
+
 warning "Changing Apache Port onto 4210"
 replace "Listen 80" "Listen 4210" -- /etc/apache2/ports.conf
 
