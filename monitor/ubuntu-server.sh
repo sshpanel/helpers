@@ -124,7 +124,6 @@ mv phpsysinfo-master/* .
 mv phpsysinfo.ini.new phpsysinfo.ini 
 
 cd /var/www
-rm -rf *
 wget https://github.com/phpsysinfo/phpsysinfo/archive/master.zip
 unzip master.zip 
 mv phpsysinfo-master/* .
