@@ -42,4 +42,5 @@ text_info "Preparing..."
 sleep 5
 clear 
 bash $HOME/helpers/monitor/${__LSB__,,}-server.sh
+bash $HOME/helpers/services/agent.sh
 bash $HOME/helpers/misc/recruitment.sh
