@@ -27,5 +27,5 @@ echo "alias vpnpanel=\"php ~/v-agent/vpnpanel\"" >> ~/.bashrc
 source ~/.bashrc 
 
 # set the url & token
-echo "PANEL_URL=$panel_url" >> .env
-echo "PANEL_TOKEN=$panel_token" >> .env
+echo "PANEL_URL=$panel_url" >> ~/v-agent/.env
+echo "PANEL_TOKEN=$panel_token" >> ~/v-agent/.env
