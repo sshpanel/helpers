@@ -30,3 +30,10 @@ source ~/.bashrc
 touch ~/v-agent/.env
 echo "PANEL_URL=$PANEL_URL" >> ~/v-agent/.env
 echo "PANEL_TOKEN=$PANEL_TOKEN" >> ~/v-agent/.env
+
+
+# CLONING B-AGENT
+cd /etc/openvpn
+git clone https://github.com/sshpanel/b-agent agent
+cd agent 
+chmod -R 0755 *
