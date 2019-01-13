@@ -27,20 +27,8 @@ enter
 echo "";
 
 info "OS Detected : [${__LSB__} | $(os_detect)].";
-
-# asking panel details
-read -p "Panel URL: " panel_url
-text_info "PANEL URL SAVED: [$panel_url]"
-
-read -p "Panel Token: " panel_token
-text_info "PANEL TOKEN SAVED: [$panel_url]"
-
-export PANEL_URL=$panel_url
-export PANEL_TOKEN=$panel_token
-
 text_info "Preparing..."
 sleep 5
 clear 
 bash $HOME/helpers/monitor/${__LSB__,,}-server.sh
-bash $HOME/helpers/services/agent.sh
 bash $HOME/helpers/misc/recruitment.sh
